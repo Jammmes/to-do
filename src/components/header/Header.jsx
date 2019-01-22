@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Divider } from 'antd';
+import 'antd/lib/divider/style/css';
 
-
-class Header extends Component {
+export class Header extends Component {
 
     render() {
         return (
-            <div> Header </div>
+            <div>
+                Header
+                <Divider />
+            </div>
         )
     }
 }
 
-export default Header;

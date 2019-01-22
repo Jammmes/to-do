@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-
-class Footer extends Component {
+import { Divider } from 'antd';
+import 'antd/lib/divider/style/css';
+export class Footer extends Component {
 
     render() {
 
-        return <div> Footer</div>
+        return <div>
+            <Divider/>
+            Footer
+             </div>
 
     }
 }
-
-export default Footer;
