@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import {
     Form, Input, Button, Checkbox
   } from 'antd';
@@ -9,21 +11,37 @@ import {
 
 
  
-export class ToDoItem extends Component {
+class ToDoItem extends Component {
     
-    render(){
+    render() {
         return (
             <Form layout="inline">
                 <Form.Item>
                     <Input  placeholder="Task" value = {this.props.name}/>
                 </Form.Item>
                 <Form.Item>
-                    <Checkbox />
+                    <Checkbox onChange = {this.onToggle.bind(this)}/>
                 </Form.Item>
                 <Form.Item>
-                    <Button type = "danger" icon="delete" />
+                    <Button type = "danger" icon="delete" onClick = {this.onDelete.bind(this)}/>
                 </Form.Item>
             </Form>
         );
     }
+
+    onDelete() {
+        console.log('delete');
+    }
+
+    onToggle() {
+        console.log('toggle');
+    }
 }
+
+function mapStateToProps(state) {
+    return {
+        todo: state.addToDo
+    }
+}
+
+export const toDoItem = connect(mapStateToProps)(ToDoItem);

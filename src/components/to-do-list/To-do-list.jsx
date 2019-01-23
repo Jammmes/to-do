@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ToDoItem } from '../index';
+import { toDoItem as ToDoItem } from '../index';
 import { connect } from 'react-redux';
 
 import { List } from 'antd';

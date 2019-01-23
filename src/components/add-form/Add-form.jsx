@@ -35,7 +35,7 @@ class AddForm extends Component {
             this.props.dispatch( addToDo(id, name) );
             this.setState({toDoName: ''});
         } else {
-            console.log('required!')
+            console.log('text is required!')
         }
     }
 
@@ -43,14 +43,14 @@ class AddForm extends Component {
         // console.log('Входящие пропсы в форму из стора: ',this.props.inputText);
         return (
             <Form layout="inline">
-            <Card>
-              <Form.Item>
-                  <Input  placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
-              </Form.Item>
-              <Form.Item>
-                <Button onClick = { this.onAddToDo.bind(this) }>Add to do</Button>
-              </Form.Item>
-              </Card>
+                <Card>
+                    <Form.Item>
+                        <Input  placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
+                    </Form.Item>
+                    <Form.Item>
+                        <Button onClick = { this.onAddToDo.bind(this) }>Add to do</Button>
+                    </Form.Item>
+                </Card>
             </Form>
         );
     }
