@@ -1,1 +1,1 @@
-export { ToDoList } from './To-do-list.jsx';
+export { toDoList } from './To-do-list.jsx';

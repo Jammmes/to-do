@@ -1,38 +1,32 @@
 import React, { Component } from 'react';
 import { ToDoItem } from '../index';
+import { connect } from 'react-redux';
 
 import { List } from 'antd';
 import 'antd/lib/list/style/css';
 
-
-  const data = [
-    {
-        id:1,
-        text: 'To do task #1'
-    },
-    {
-        id:2,
-        text: 'To do task #2'
-    },
-    {
-        id:3,
-        text: 'To do task #3'
-    }
-  ]
-
-
-export class ToDoList extends Component {
+class ToDoList extends Component {
 
     render(){
+        console.log(this.props.items);
         return <div>
             <List
                 size="small"
                 bordered
-                dataSource={data}
+                dataSource={this.props.items.todos}
                 renderItem={item => (<List.Item>
-                <ToDoItem key = {item.id} text = {item.text}/>
+                <ToDoItem key = {item.id} name = {item.name}/>
                 </List.Item>)}
             />
         </div>
     }
 }
+
+
+function mapStateToProps(state) {
+    return {
+        items: state.addToDo
+    }
+}
+
+export const toDoList = connect(mapStateToProps)(ToDoList);

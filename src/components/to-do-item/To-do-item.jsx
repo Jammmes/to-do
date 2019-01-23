@@ -11,12 +11,11 @@ import {
  
 export class ToDoItem extends Component {
     
-
     render(){
         return (
             <Form layout="inline">
                 <Form.Item>
-                    <Input  placeholder="Task" value = {this.props.text}/>
+                    <Input  placeholder="Task" value = {this.props.name}/>
                 </Form.Item>
                 <Form.Item>
                     <Checkbox />
