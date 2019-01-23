@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import './app.css';
-import { ToDoPage } from '../index';
 import { AppHeader } from '../index';
 import { AppFooter } from '../index';
 import { DevTools } from '../../utils/index';
@@ -14,7 +13,6 @@ class App extends Component {
   static path = '/';
 
   render() {
-
     return (
       <div className="app">
           { process.env.NODE_ENV !== 'production' ? <DevTools /> : null }
@@ -24,7 +22,7 @@ class App extends Component {
           </Header>
 
           <Content>
-            <ToDoPage/>
+          { this.props.children }
           </Content>
 
           <Footer>

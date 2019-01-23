@@ -8,8 +8,6 @@ import routes from './router/routes';
 
 const store = configureStore();
 
-console.log();
-
 ReactDOM.render(
 <Provider store = {store}>
     <BrowserRouter>
