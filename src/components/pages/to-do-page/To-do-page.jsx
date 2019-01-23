@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './to-do-page.css';
-import { AddForm } from '../../index';
+import { addForm  as AddForm} from '../../index';
 import { ToDoList } from '../../index';
 
 

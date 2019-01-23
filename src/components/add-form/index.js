@@ -1,1 +1,2 @@
-export { AddForm } from './Add-form.jsx';
+export { addForm } from './Add-form.jsx';
+export { AddToDoReducer } from './reducers';
