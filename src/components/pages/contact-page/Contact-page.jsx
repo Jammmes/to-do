@@ -1,17 +1,35 @@
 import React, { Component } from 'react';
-
+import { Button, Card } from 'antd';
+import 'antd/lib/button/style/css';
+import 'antd/lib/card/style/css';
 import './contact-page.css';
+import { connect } from 'react-redux';
+import { openModal } from '../../modal/index';
 
 
 export class ContactPage extends Component {
 
     static path = '/contact';
 
+    onOpen() {
+        this.props.dispatch( openModal());
+    }
+
     render() {
         return (
             <div className="ContactPage">
-                CONTACTS:
+                <Card>
+                    CONTACTS:
+                    <Button onClick = {this.onOpen.bind(this)} icon="star"/>
+                </Card>
             </div>
+
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {}
+}
+
+export const contactPage = connect(mapStateToProps)(ContactPage);

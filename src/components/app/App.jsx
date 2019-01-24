@@ -4,6 +4,7 @@ import { AppHeader } from '../index';
 import { AppFooter } from '../index';
 import { DevTools } from '../../utils/index';
 import { Layout } from 'antd';
+import { modal as Modal } from '../modal/index';
 import 'antd/lib/layout/style/css';
 
 const { Header, Footer, Content } = Layout;
@@ -18,7 +19,7 @@ class App extends Component {
           <Header>
             <AppHeader />
           </Header>
-
+          < Modal>d </ Modal>
           <Content>
           { this.props.children }
           </Content>
