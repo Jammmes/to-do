@@ -32,7 +32,7 @@ class AddForm extends Component {
     generateNewId(array) {
         const result = array.slice();
         result.sort((a,b) => (a.id > b.id) ? -1 : 1);
-        return result[0].id + 1;
+        return (result.length) ? result[0].id + 1 : 1;
     }
 
     onAddToDo() {
@@ -47,12 +47,12 @@ class AddForm extends Component {
     }
 
     render() {
-        // console.log('Входящие пропсы в форму из стора: ',this.props.inputText);
+        const {toDoName} = this.state;
         return (
             <Form layout="inline">
                 <Card>
                     <Form.Item>
-                        <Input  placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
+                        <Input value = {toDoName} placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
                     </Form.Item>
                     <Form.Item>
                         <Button onClick = { this.onAddToDo.bind(this) }>Add to do</Button>

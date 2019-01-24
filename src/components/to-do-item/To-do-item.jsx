@@ -45,7 +45,7 @@ class ToDoItem extends Component {
     }
 
     onToggle(id) {
-        this.props.dispatch (toggleToDo(id));
+        this.props.dispatch ( toggleToDo(id) );
     }
 }
 

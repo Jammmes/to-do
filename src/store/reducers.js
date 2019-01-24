@@ -6,26 +6,41 @@ const initialState = {
     todos: [
         {
             id: 1,
-            name: 'To do init',
+            name: 'Unfinished task',
             completed: false
+        },
+        {
+            id: 2,
+            name: 'Finished task',
+            completed: true
         }
     ]
 }
 
-function addToDoReducer(state = initialState, action) { 
-    // console.log('Look from reducer: state: ', state);
+function addToDoReducer(state = initialState, action = {}) {
+
     switch (action.type) {
+
         case ADD_TODO:
             let newState = {...state};
-            let newToDo = { id: action.id, name: action.name, completed: true }
+            const newToDo = { id: action.id, name: action.name, completed: false };
             newState.todos.push(newToDo);
             return newState;
+
         case DELETE_TODO:
-            let todos = state.todos.filter( item => item.id !== action.id );
-            let afterDeleteState = {...state, todos}
-            return afterDeleteState;
+           let newTodos = state.todos.filter( item => item.id !== action.id );
+           return {...state, todos:newTodos};
+           
         case TOGGLE_TODO:
-            return state;
+            const todos =  state.todos.map( item => {
+                if (item.id === action.id) {
+                    return {id: item.id, name: item.name, completed: !item.completed}
+                } else {
+                    return item
+                }
+            });
+            return {...state, todos};
+
         default:
         return state;
     }
