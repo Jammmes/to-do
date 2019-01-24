@@ -13,16 +13,16 @@ class ToDoList extends Component {
         dispatch: PropTypes.func.isRequired
     }
 
-    render(){
+    render() {
         // console.log('Пришло в list ',this.props);
         return <div>
             <List
                 size="small"
                 bordered
-                dataSource={this.props.items.todos}
-                renderItem={item => (<List.Item>
-                <ToDoItem  key = {item.id} item = {item}/>
-                </List.Item>)}
+                dataSource = { this.props.items.todos }
+                renderItem = { item => (<List.Item>
+                <ToDoItem  key = { item.id } item = { item }/>
+                </List.Item>) }
             />
         </div>
     }
@@ -30,9 +30,7 @@ class ToDoList extends Component {
 
 
 function mapStateToProps(state) {
-    return {
-        items: state.addToDo
-    }
+    return { items: state.addToDo }
 }
 
 export const toDoList = connect(mapStateToProps)(ToDoList);

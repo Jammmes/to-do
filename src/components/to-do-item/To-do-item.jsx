@@ -23,18 +23,18 @@ class ToDoItem extends Component {
     
     render() {
         // console.log('Пришло в item ',this.props);
-        const {name, id, completed} = this.props.item;
+        const { name, id, completed } = this.props.item;
         const inputClassName = completed ? 'completed' : 'un-completed';
         return (
             <Form layout="inline">
                 <Form.Item>
-                    <Input className = { inputClassName } disabled placeholder="Task" value = {name}/>
+                    <Input className = { inputClassName } disabled placeholder="Task" value = { name }/>
                 </Form.Item>
                 <Form.Item>
-                    <Checkbox checked = {completed} onChange = {this.onToggle.bind(this, id)}/>
+                    <Checkbox checked = { completed } onChange = { this.onToggle.bind(this, id) }/>
                 </Form.Item>
                 <Form.Item>
-                    <Button type = "danger" icon="delete" onClick = {this.onDelete.bind(this, id)}/>
+                    <Button type = "danger" icon="delete" onClick = { this.onDelete.bind(this, id) }/>
                 </Form.Item>
             </Form>
         );
@@ -50,9 +50,7 @@ class ToDoItem extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        todo: state.addToDo
-    }
+    return { todo: state.addToDo }
 }
 
 export const toDoItem = connect(mapStateToProps)(ToDoItem);

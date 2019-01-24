@@ -26,7 +26,7 @@ class AddForm extends Component {
 
     inputOnChange(event) {
         const toDoName = event.target.value;
-        this.setState({toDoName})
+        this.setState({ toDoName })
     }
 
     generateNewId(array) {
@@ -40,19 +40,17 @@ class AddForm extends Component {
         if (name) {
             const id = this.generateNewId(this.props.inputText.todos);
             this.props.dispatch( addToDo(id, name) );
-            this.setState({toDoName: ''});
-        } else {
-            console.log('text is required!')
-        }
+            this.setState({ toDoName: '' });
+        } else { console.log('text is required!') }
     }
 
     render() {
-        const {toDoName} = this.state;
+        const { toDoName } = this.state;
         return (
             <Form layout="inline">
                 <Card>
                     <Form.Item>
-                        <Input value = {toDoName} placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
+                        <Input value = { toDoName } placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
                     </Form.Item>
                     <Form.Item>
                         <Button onClick = { this.onAddToDo.bind(this) }>Add to do</Button>
@@ -64,9 +62,7 @@ class AddForm extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-        inputText: state.addToDo
-    }
+    return { inputText: state.addToDo };
 }
 
 export const addForm =  connect(mapStateToProps)(AddForm);
