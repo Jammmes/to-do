@@ -10,8 +10,6 @@ const { Header, Footer, Content } = Layout;
 
 class App extends Component {
 
-  static path = '/';
-
   render() {
     return (
       <div className="app">
