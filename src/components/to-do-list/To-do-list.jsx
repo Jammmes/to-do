@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { toDoItem as ToDoItem } from '../index';
 import { connect } from 'react-redux';
 
@@ -7,15 +8,20 @@ import 'antd/lib/list/style/css';
 
 class ToDoList extends Component {
 
+    static propTypes = {
+        items: PropTypes.object.isRequired,
+        dispatch: PropTypes.func.isRequired
+    }
+
     render(){
-        console.log(this.props.items);
+        // console.log('Пришло в list ',this.props);
         return <div>
             <List
                 size="small"
                 bordered
                 dataSource={this.props.items.todos}
                 renderItem={item => (<List.Item>
-                <ToDoItem key = {item.id} name = {item.name}/>
+                <ToDoItem  key = {item.id} item = {item}/>
                 </List.Item>)}
             />
         </div>

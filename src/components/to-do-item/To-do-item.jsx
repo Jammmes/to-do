@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { deleteToDo } from './actions';
+import { toggleToDo } from './actions';
 
 import {
     Form, Input, Button, Checkbox
@@ -8,33 +11,41 @@ import {
   import 'antd/lib/input/style/css';
   import 'antd/lib/button/style/css';
   import 'antd/lib/checkbox/style/css';
-
+  import './to-do-item.css';
 
  
 class ToDoItem extends Component {
+
+    static propTypes = {
+        todo: PropTypes.object.isRequired,
+        dispatch: PropTypes.func.isRequired
+    }
     
     render() {
+        // console.log('Пришло в item ',this.props);
+        const {name, id, completed} = this.props.item;
+        const inputClassName = completed ? 'completed' : 'un-completed';
         return (
             <Form layout="inline">
                 <Form.Item>
-                    <Input  placeholder="Task" value = {this.props.name}/>
+                    <Input className = { inputClassName } disabled placeholder="Task" value = {name}/>
                 </Form.Item>
                 <Form.Item>
-                    <Checkbox onChange = {this.onToggle.bind(this)}/>
+                    <Checkbox checked = {completed} onChange = {this.onToggle.bind(this, id)}/>
                 </Form.Item>
                 <Form.Item>
-                    <Button type = "danger" icon="delete" onClick = {this.onDelete.bind(this)}/>
+                    <Button type = "danger" icon="delete" onClick = {this.onDelete.bind(this, id)}/>
                 </Form.Item>
             </Form>
         );
     }
 
-    onDelete() {
-        console.log('delete');
+    onDelete(id) {
+        this.props.dispatch( deleteToDo(id) );
     }
 
-    onToggle() {
-        console.log('toggle');
+    onToggle(id) {
+        this.props.dispatch (toggleToDo(id));
     }
 }
 

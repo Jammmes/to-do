@@ -1,6 +1,5 @@
-const DELETE_TODO = 'DELETE_TODO';
-const FINISH_TODO = 'FINISH_TODO';
-const RETURN_TODO = 'RETURN_TODO';
+export const DELETE_TODO = 'DELETE_TODO';
+export const TOGGLE_TODO = 'TOGGLE_TODO';
 
 export function deleteToDo(id) {
     return {
@@ -9,16 +8,9 @@ export function deleteToDo(id) {
     }
 }
 
-export function finishToDo(id) {
+export function toggleToDo(id) {
     return {
         id: id,
-        type: FINISH_TODO
-    }
-}
-
-export function returnToDo(id) {
-    return {
-        id: id,
-        type: RETURN_TODO
+        type: TOGGLE_TODO
     }
 }
