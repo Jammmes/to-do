@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addToDo } from './actions';
-
-import {
-    Form, Input, Button,Card
-  } from 'antd';
-  import 'antd/lib/form/style/css';
-  import 'antd/lib/input/style/css';
-  import 'antd/lib/button/style/css';
-  import 'antd/lib/card/style/css';
-
+import { Form } from 'antd/lib/form';
+import { Input } from 'antd/lib/input';
+import { Button } from 'antd/lib/button';
+import { Card } from 'antd/lib/card';
+import 'antd/lib/form/style/css';
+import 'antd/lib/input/style/css';
+import 'antd/lib/button/style/css';
+import 'antd/lib/card/style/css';
 
 class AddForm extends Component {
 

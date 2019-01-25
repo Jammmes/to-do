@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteToDo } from './actions';
 import { toggleToDo } from './actions';
-
-import {
-    Form, Input, Button, Checkbox
-  } from 'antd';
-  import 'antd/lib/form/style/css';
-  import 'antd/lib/input/style/css';
-  import 'antd/lib/button/style/css';
-  import 'antd/lib/checkbox/style/css';
-  import './to-do-item.css';
-
+import { Form } from 'antd/lib/form';
+import { Input } from 'antd/lib/input';
+import { Button } from 'antd/lib/button';
+import { Checkbox } from 'antd/lib/checkbox';  
+import 'antd/lib/form/style/css';
+import 'antd/lib/input/style/css';
+import 'antd/lib/button/style/css';
+import 'antd/lib/checkbox/style/css';
+import './to-do-item.css';
  
 class ToDoItem extends Component {
 

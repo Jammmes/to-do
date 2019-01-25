@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
 import { toDoItem as ToDoItem } from '../index';
 import { connect } from 'react-redux';
-
-import { List } from 'antd';
+import { List } from 'antd/lib/list';
 import 'antd/lib/list/style/css';
 
 class ToDoList extends Component {
@@ -20,13 +20,12 @@ class ToDoList extends Component {
                 bordered
                 dataSource = { this.props.items.todos }
                 renderItem = { item => (<List.Item>
-                <ToDoItem  key = { item.id } item = { item }/>
+                    <ToDoItem  key = { item.id } item = { item }/>
                 </List.Item>) }
             />
         </div>
     }
 }
-
 
 function mapStateToProps(state) {
     return { items: state.toDoStore }
