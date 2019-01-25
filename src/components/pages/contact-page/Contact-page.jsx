@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { Button } from 'antd/lib/button';
-import { Card } from 'antd/lib/card';
+import  Button  from 'antd/lib/button';
+import  Card  from 'antd/lib/card';
 import 'antd/lib/button/style/css';
 import 'antd/lib/card/style/css';
 import './contact-page.css';

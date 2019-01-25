@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addToDo } from './actions';
-// import { Form, Input, Button, Card } from 'antd';
 import  Form from 'antd/lib/form';
 import  Input from 'antd/lib/input';
 import  Button from 'antd/lib/button';

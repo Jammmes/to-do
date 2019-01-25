@@ -3,7 +3,7 @@ import React, { Component} from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Button } from 'antd/lib/button';
+import Button from 'antd/lib/button';
 import { closeModal } from './index'
 import 'antd/lib/button/style/css';
 import './modal.css';
@@ -19,7 +19,7 @@ class Modal extends Component {
         document.body.removeChild(this.rootModal);
     }
 
-    static PropTypes = {
+    static propTypes = {
         modal: PropTypes.object.isRequired,
         dispatch: PropTypes.func.isRequired
     }
