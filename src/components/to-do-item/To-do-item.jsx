@@ -22,7 +22,6 @@ class ToDoItem extends Component {
     }
     
     render() {
-        // console.log('Пришло в item ',this.props);
         const { name, id, completed } = this.props.item;
         const inputClassName = completed ? 'completed' : 'un-completed';
         return (
@@ -50,7 +49,7 @@ class ToDoItem extends Component {
 }
 
 function mapStateToProps(state) {
-    return { todo: state.addToDo }
+    return { todo: state.toDoStore }
 }
 
 export const toDoItem = connect(mapStateToProps)(ToDoItem);

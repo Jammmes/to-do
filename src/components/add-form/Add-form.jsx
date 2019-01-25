@@ -26,12 +26,12 @@ class AddForm extends Component {
 
     inputOnChange(event) {
         const toDoName = event.target.value;
-        this.setState({ toDoName })
+        this.setState( state => ({ toDoName:toDoName }) )
     }
 
     generateNewId(array) {
         const result = array.slice();
-        result.sort((a,b) => (a.id > b.id) ? -1 : 1);
+        result.sort( (a,b) => (a.id > b.id) ? -1 : 1);
         return (result.length) ? result[0].id + 1 : 1;
     }
 
@@ -40,8 +40,8 @@ class AddForm extends Component {
         if (name) {
             const id = this.generateNewId(this.props.inputText.todos);
             this.props.dispatch( addToDo(id, name) );
-            this.setState({ toDoName: '' });
-        } else { console.log('text is required!') }
+            this.setState( state => ({ toDoName: '' }) );
+        } else { console.log( 'text is required!' ) }
     }
 
     render() {
@@ -62,7 +62,7 @@ class AddForm extends Component {
 }
 
 function mapStateToProps(state) {
-    return { inputText: state.addToDo };
+    return { inputText: state.toDoStore };
 }
 
 export const addForm =  connect(mapStateToProps)(AddForm);

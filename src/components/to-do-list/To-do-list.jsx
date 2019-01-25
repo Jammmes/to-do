@@ -14,7 +14,6 @@ class ToDoList extends Component {
     }
 
     render() {
-        // console.log('Пришло в list ',this.props);
         return <div>
             <List
                 size="small"
@@ -30,7 +29,7 @@ class ToDoList extends Component {
 
 
 function mapStateToProps(state) {
-    return { items: state.addToDo }
+    return { items: state.toDoStore }
 }
 
 export const toDoList = connect(mapStateToProps)(ToDoList);

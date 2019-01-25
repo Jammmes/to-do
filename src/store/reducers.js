@@ -17,7 +17,7 @@ const initialState = {
     ]
 }
 
-function addToDoReducer(state = initialState, action = {}) {
+function toDoReducer(state = initialState, action = {}) {
 
     switch (action.type) {
 
@@ -46,8 +46,8 @@ function addToDoReducer(state = initialState, action = {}) {
     }
 }
 
-export const AddToDoReducer = {
-    addToDo: addToDoReducer
+export const ToDoReducer = {
+    toDoStore: toDoReducer
 };
 
 

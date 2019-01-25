@@ -47,6 +47,4 @@ function mapStateToProps(state) {
     return { modal: state.modal };
 }
 
-
-
 export const modal = connect(mapStateToProps)(Modal);
