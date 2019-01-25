@@ -11,7 +11,7 @@ export class ContactPage extends Component {
 
     static path = '/contact';
 
-    onOpen() {
+    onOpenModal() {
         this.props.dispatch( openModal());
     }
 
@@ -20,7 +20,7 @@ export class ContactPage extends Component {
             <div className="ContactPage">
                 <Card>
                     CONTACTS:
-                    <Button onClick = {this.onOpen.bind(this)} icon="star"/>
+                    <Button onClick = {this.onOpenModal.bind(this)} icon="star"/>
                 </Card>
             </div>
 

@@ -19,7 +19,9 @@ class App extends Component {
           <Header>
             <AppHeader />
           </Header>
-          < Modal />
+          < Modal>
+            Внимание! Модульное окно.
+          </ Modal>
           <Content>
           { this.props.children }
           </Content>
