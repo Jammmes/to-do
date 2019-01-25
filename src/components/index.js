@@ -5,3 +5,4 @@ export { addForm } from './add-form/index';
 export { toDoList } from './to-do-list/index';
 export { toDoItem } from './to-do-item/index';
 export { AppFooter } from './app-footer/index';
+export { modal } from './modal/index';
