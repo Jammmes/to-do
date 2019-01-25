@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { toDoItem as ToDoItem } from '../index';
 import { connect } from 'react-redux';
-import { List } from 'antd/lib/list';
-import 'antd/lib/list/style/css';
+import { List } from 'antd';
 
 class ToDoList extends Component {
 

@@ -4,7 +4,7 @@ import './app.css';
 import { AppHeader } from '../index';
 import { AppFooter } from '../index';
 import { DevTools } from '../../utils/index';
-import { Layout } from 'antd/lib/layout';
+import { Layout } from 'antd';
 import { modal as Modal } from '../index';
 import 'antd/lib/layout/style/css';
 
