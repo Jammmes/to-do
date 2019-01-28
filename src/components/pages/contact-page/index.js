@@ -1,3 +1,5 @@
-export { contactPage } from './Contact-page.jsx';
+import ContactPage from './Contact-page.jsx';
+
+export default ContactPage;
 
 export { ContactRoute } from './routes';

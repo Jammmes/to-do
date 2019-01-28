@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class AppFooter extends Component {
+class AppFooter extends Component {
 
     render() {
         return <div>
@@ -8,3 +8,5 @@ export class AppFooter extends Component {
                 </div>
     }
 }
+
+export default AppFooter;

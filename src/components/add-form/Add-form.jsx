@@ -65,6 +65,4 @@ function mapStateToProps(state) {
     return { inputText: state.toDoStore };
 }
 
-const addForm =  connect(mapStateToProps)(AddForm);
-
-export default addForm;
+export default connect(mapStateToProps)(AddForm);

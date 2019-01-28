@@ -1,3 +1,5 @@
-export { modal } from './Modal.jsx';
+import Modal  from './Modal.jsx';
+
 export { ModalReducer } from './reducers';
 export { openModal, closeModal } from './actions';
+export default Modal;

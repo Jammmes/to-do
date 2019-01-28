@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import './to-do-page.css';
-import  AddForm  from '../../index';
-import { toDoList as ToDoList } from '../../index';
+import  AddForm  from '../../add-form/index';
+import ToDoList from '../../to-do-list/index';
 
-export class ToDoPage extends Component {
+class ToDoPage extends Component {
 
     static path = '/';
 
@@ -17,3 +17,5 @@ export class ToDoPage extends Component {
         )
     }
 }
+
+export default ToDoPage;

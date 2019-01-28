@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
-import { toDoItem as ToDoItem } from '../index';
+import ToDoItem from '../to-do-item/index';
 import { connect } from 'react-redux';
 import List from 'antd/lib/list';
 
-class ToDoList extends Component {
+export class ToDoList extends Component {
 
     static propTypes = {
         items: PropTypes.object.isRequired,
@@ -30,4 +30,4 @@ function mapStateToProps(state) {
     return { items: state.toDoStore }
 }
 
-export const toDoList = connect(mapStateToProps)(ToDoList);
+export default connect(mapStateToProps)(ToDoList);

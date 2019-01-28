@@ -38,4 +38,4 @@ function mapStateToProps(state) {
     return {}
 }
 
-export const contactPage = connect(mapStateToProps)(ContactPage);
+export default connect(mapStateToProps)(ContactPage);

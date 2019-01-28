@@ -14,7 +14,7 @@ import 'antd/lib/button/style/css';
 import 'antd/lib/checkbox/style/css';
 import './to-do-item.css';
  
-class ToDoItem extends Component {
+export class ToDoItem extends Component {
 
     static propTypes = {
         todo: PropTypes.object.isRequired,
@@ -52,4 +52,4 @@ function mapStateToProps(state) {
     return { todo: state.toDoStore }
 }
 
-export const toDoItem = connect(mapStateToProps)(ToDoItem);
+export default connect(mapStateToProps)(ToDoItem);

@@ -1,1 +1,3 @@
-export { AppFooter } from './App-footer.jsx';
+import AppFooter  from './App-footer.jsx';
+
+export default AppFooter;

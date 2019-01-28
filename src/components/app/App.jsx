@@ -1,14 +1,14 @@
 import React, { Component} from 'react';
 
 import './app.css';
-import { AppHeader } from '../index';
-import { AppFooter } from '../index';
+import  AppHeader  from '../app-header/index';
+import  AppFooter  from '../app-footer/index';
 import { DevTools } from '../../utils/index';
 import Layout from 'antd/lib/layout';
-import { modal as Modal } from '../index';
+import Modal from '../modal/index';
 import 'antd/lib/layout/style/css';
 
-const { Header, Footer, Content } = Layout;
+const {Header, Footer, Content} = Layout;
 
 class App extends Component {
 

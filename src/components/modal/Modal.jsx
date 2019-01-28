@@ -8,7 +8,7 @@ import { closeModal } from './index'
 import 'antd/lib/button/style/css';
 import './modal.css';
 
-class Modal extends Component {
+export class Modal extends Component {
     
     componentWillMount(){
         this.rootModal = document.createElement('div');
@@ -48,4 +48,4 @@ function mapStateToProps(state) {
     return { modal: state.modal };
 }
 
-export const modal = connect(mapStateToProps)(Modal);
+export default connect(mapStateToProps)(Modal);

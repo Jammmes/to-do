@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
 
-export class ErrorPage extends Component {
+class ErrorPage extends Component {
     render() { 
         return (
             <h2>
@@ -10,4 +11,5 @@ export class ErrorPage extends Component {
         );
     }
 }
- 
+
+export default ErrorPage;
