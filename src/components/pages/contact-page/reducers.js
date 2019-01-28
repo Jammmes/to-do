@@ -20,7 +20,7 @@ function contactReducer (state = initialState, action={}) {
         case CONTACTS_LOAD_ERROR:
             return { ...state, hasErrored: true};
         case CONTACTS_LOAD_SUCCESS:
-            return { ...state, contacts:action.contacts.results };
+            return { ...state, contacts:action.contacts };
         default:
             return state;
     }

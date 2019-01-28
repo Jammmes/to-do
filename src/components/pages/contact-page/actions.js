@@ -22,3 +22,22 @@ export function contactsLoadSuccess(contacts){
         contacts: contacts
     }
 }
+
+export function loadContacts(url) {
+
+    return (dispatch) => {
+        dispatch(contactsIsLoading(true));
+        fetch(url)
+        .then( (response) => {
+            if (!response.ok) {
+                throw Error (response.status);
+            }
+            dispatch ( contactsIsLoading(false) );
+            return response;
+        } )
+        .then( (response) => response.json() )
+        .then ( (contacts) => dispatch( contactsLoadSuccess(contacts.results) ) )
+        .catch( () => dispatch( contactsLoadError(true) )  );
+
+    }
+}
