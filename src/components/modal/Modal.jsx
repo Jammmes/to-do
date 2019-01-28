@@ -35,7 +35,8 @@ export class Modal extends Component {
         return  ReactDOM.createPortal( 
         <div className = "modal-back">
             <div className ='modal-window'>
-                <p>{ this.props.children }</p> 
+                <p>{ this.props.children }</p>
+                
                 <Button icon="close-circle" onClick = { this.onClose.bind(this) }/>
             </div>
         </div>,

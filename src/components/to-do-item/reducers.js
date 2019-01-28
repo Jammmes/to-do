@@ -1,6 +1,6 @@
-import { ADD_TODO } from '../components/add-form/actions';
-import { DELETE_TODO } from '../components/to-do-item/actions';
-import { TOGGLE_TODO } from '../components/to-do-item/actions';
+import { ADD_TODO } from '../add-form/actions';
+import { DELETE_TODO } from './actions';
+import { TOGGLE_TODO } from './actions';
 
 const initialState = {
     todos: [
