@@ -11,11 +11,7 @@ class ShowInfo  extends Component {
     static propTypes = {
         openModal: PropTypes.func
     }
-
-    openModal() {
-        this.props.openModal();
-    }
-    
+  
     render() { 
         const { onOpenModal} = this.props;
         return (
