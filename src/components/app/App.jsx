@@ -26,7 +26,7 @@ return (
 			<Content>
 				{ this.props.children }
 			</Content>
-			<Footer>
+			<Footer className = 'footer'>
 				<AppFooter />
 			</Footer>
 		</Layout>

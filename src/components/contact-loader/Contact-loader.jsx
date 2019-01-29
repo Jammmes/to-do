@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 import Button from 'antd/lib/button';
@@ -6,7 +6,7 @@ import 'antd/lib/button/style/css';
 import { connect } from 'react-redux';
 import { loadContacts } from './actions';
 
-class ContactLoader extends Component {
+class ContactLoader extends PureComponent {
 
     static propTypes = {
         loadContacts: PropTypes.func

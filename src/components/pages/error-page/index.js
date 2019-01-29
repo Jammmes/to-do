@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import { Link } from 'react-router-dom';
 
-class ErrorPage extends Component {
+class ErrorPage extends PureComponent {
     render() { 
         return (
             <h2>

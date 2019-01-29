@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import './app-header.css';
 import { Link } from 'react-router-dom'
 
-class AppHeader extends Component {
+class AppHeader extends PureComponent {
 
     render() {
         return (

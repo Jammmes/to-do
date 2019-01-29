@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -14,7 +14,7 @@ import 'antd/lib/button/style/css';
 import 'antd/lib/checkbox/style/css';
 import './to-do-item.css';
  
-export class ToDoItem extends Component {
+export class ToDoItem extends PureComponent {
 
     static propTypes = {
         todo: PropTypes.object.isRequired,

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import Card  from 'antd/lib/card';
 import 'antd/lib/card/style/css';
@@ -7,7 +7,7 @@ import ContactList from '../../contact-list/index';
 import  ShowInfo  from '../../show-info/index';
 import ContactLoader from '../../contact-loader/index';
 
-export class ContactPage extends Component {
+export class ContactPage extends PureComponent {
 
     static path = '/contact';
 

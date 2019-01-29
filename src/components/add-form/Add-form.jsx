@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -12,7 +12,7 @@ import 'antd/lib/input/style/css';
 import 'antd/lib/button/style/css';
 import 'antd/lib/card/style/css';
 
-export class AddForm extends Component {
+export class AddForm extends PureComponent {
 
     constructor(props) {
         super(props);

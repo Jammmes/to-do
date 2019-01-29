@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './contact-item.css';
 
 
-class ContactItem extends Component {
+class ContactItem extends PureComponent {
 
     render() { 
         return (

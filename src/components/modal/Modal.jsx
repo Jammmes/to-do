@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { PureComponent} from 'react';
 
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import { closeModal } from './index'
 import 'antd/lib/button/style/css';
 import './modal.css';
 
-export class Modal extends Component {
+export class Modal extends PureComponent {
     
     componentWillMount(){
         this.rootModal = document.createElement('div');

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import  ContactItem  from '../contact-item/index';
 import Preloader from '../preloader/index';
 
-class ContactList extends Component {
+class ContactList extends PureComponent {
 
     render() { 
         if (!this.props.list.contacts.length && this.props.list.isLoading) return <Preloader />;
