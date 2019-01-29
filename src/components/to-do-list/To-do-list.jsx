@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ToDoItem from '../to-do-item/index';
 import { connect } from 'react-redux';
 import List from 'antd/lib/list';
+import 'antd/lib/list/style/css';
 
 export class ToDoList extends Component {
 
