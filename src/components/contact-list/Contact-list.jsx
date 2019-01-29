@@ -1,9 +1,16 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
-import  ContactItem  from '../contact-item/index';
-import Preloader from '../preloader/index';
 
-class ContactList extends PureComponent {
+import PropTypes from 'prop-types';
+import ContactItem  from '../contact-item/index';
+import Preloader from '../preloader/index';
+import withConnectToStore from '../with-connect-to-store/index';
+
+export class ContactList extends PureComponent {
+
+    static propTypes = {
+        dispatch: PropTypes.func.isRequired,
+        list: PropTypes.object.isRequired
+    }
 
     render() { 
         if (!this.props.list.contacts.length && this.props.list.isLoading) return <Preloader />;
@@ -14,7 +21,6 @@ class ContactList extends PureComponent {
                 }
             </div>
         )
-
     }
 }
  
@@ -24,5 +30,5 @@ function mapStateToProps (state) {
      }
 }
 
-export default connect(mapStateToProps)(ContactList);
+export default withConnectToStore(ContactList, mapStateToProps)
 

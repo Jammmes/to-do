@@ -16,7 +16,7 @@ class ShowInfo  extends PureComponent {
         const { onOpenModal} = this.props;
         return (
             <Button onClick = {onOpenModal} icon="star"/>
-          );
+        );
     }
 }
 

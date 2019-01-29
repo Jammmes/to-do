@@ -9,7 +9,8 @@ import { loadContacts } from './actions';
 class ContactLoader extends PureComponent {
 
     static propTypes = {
-        loadContacts: PropTypes.func
+        loadContacts: PropTypes.func,
+        contacts: PropTypes.object.isRequired
     }
  
     constructor(props) {
