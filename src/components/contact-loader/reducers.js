@@ -5,7 +5,7 @@ import { CONTACTS_LOAD_SUCCESS } from './actions';
 const initialState = {
     contacts:[],
     hasErrored:false,
-    isLoaded:false
+    isLoading:false
 }
 
 
@@ -13,9 +13,9 @@ function contactReducer (state = initialState, action={}) {
     switch (action.type) {
         case CONTACTS_IS_LOADING:
             if (action.isLoading){
-                return { ...state, isLoaded: false};
+                return { ...state, isLoading: true};
             } else {
-                return { ...state, isLoaded: true};
+                return { ...state, isLoading: false};
             }
         case CONTACTS_LOAD_ERROR:
             return { ...state, hasErrored: true};

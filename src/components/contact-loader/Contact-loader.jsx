@@ -18,9 +18,7 @@ class ContactLoader extends Component {
     }
 
     render() {
-        const {
-            onLoadContacts,
-        } = this.props;
+        const {onLoadContacts} = this.props;
         return (
             <Button onClick = {() => onLoadContacts(this.url)} icon="cloud-download">Load contacts</Button>
         );

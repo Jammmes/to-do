@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import  ContactItem  from '../contact-item/index';
-
+import Preloader from '../preloader/index';
 
 class ContactList extends Component {
 
     render() { 
-        if (!this.props.list.contacts.length) return '';
+        if (!this.props.list.contacts.length && this.props.list.isLoading) return <Preloader />;
         return (
             <div>
                 {
@@ -14,6 +14,7 @@ class ContactList extends Component {
                 }
             </div>
         )
+
     }
 }
  
