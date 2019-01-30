@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addToDo } from './actions';
+import { addToDo } from '../actions';
 import  Form from 'antd/lib/form';
 import  Input from 'antd/lib/input';
 import  Button from 'antd/lib/button';
@@ -12,7 +12,7 @@ import 'antd/lib/input/style/css';
 import 'antd/lib/button/style/css';
 import 'antd/lib/card/style/css';
 
-export class AddForm extends PureComponent {
+export class AddToDoForm extends PureComponent {
 
     constructor(props) {
         super(props);
@@ -29,7 +29,7 @@ export class AddForm extends PureComponent {
         this.setState( state => ({ toDoName:toDoName }) )
     }
 
-    generateNewId(array) {
+    generateNewId(array = []) {
         const result = array.slice();
         result.sort( (a,b) => (a.id > b.id) ? -1 : 1);
         return (result.length) ? result[0].id + 1 : 1;
@@ -65,4 +65,4 @@ function mapStateToProps(state) {
     return { inputText: state.toDoStore };
 }
 
-export default connect(mapStateToProps)(AddForm);
+export default connect(mapStateToProps)(AddToDoForm);

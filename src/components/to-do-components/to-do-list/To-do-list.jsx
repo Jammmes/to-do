@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ToDoItem from '../to-do-item/index';
 import List from 'antd/lib/list';
 import 'antd/lib/list/style/css';
-import withConnectToStore from '../with-connect-to-store/index';
+import withConnectToStore from '../../with-connect-to-store/index';
 
 export class ToDoList extends PureComponent {
 

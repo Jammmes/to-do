@@ -2,8 +2,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteToDo } from './actions';
-import { toggleToDo } from './actions';
+import { deleteToDo, toggleToDo } from '../actions';
 import Form from 'antd/lib/form';
 import Button from 'antd/lib/button';
 import Input from 'antd/lib/input';

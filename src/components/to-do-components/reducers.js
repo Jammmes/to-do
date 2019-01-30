@@ -1,32 +1,17 @@
-import { ADD_TODO } from '../add-form/actions';
+import { ADD_TODO } from './actions';
 import { DELETE_TODO } from './actions';
 import { TOGGLE_TODO } from './actions';
 
-const initialState = {
-    todos: [
-        {
-            id: 1,
-            name: 'Unfinished task',
-            completed: false
-        },
-        {
-            id: 2,
-            name: 'Finished task',
-            completed: true
-        }
-    ]
-}
-
-function toDoReducer(state = initialState, action = {}) {
+function toDoReducer(state = {todos:[]}, action = {}) {
 
     switch (action.type) {
 
         case ADD_TODO:
-            let newState = {...state};
-            const newToDo = { id: action.id, name: action.name, completed: false };
-            newState.todos.push(newToDo);
-            return newState;
-
+        let newState = {...state};
+        const newToDo = { id: action.id, name: action.name, completed: false };
+        newState.todos.push(newToDo);
+        return newState;
+        
         case DELETE_TODO:
            let newTodos = state.todos.filter( item => item.id !== action.id );
            return {...state, todos:newTodos};
@@ -49,5 +34,3 @@ function toDoReducer(state = initialState, action = {}) {
 export const ToDoReducer = {
     toDoStore: toDoReducer
 };
-
-
