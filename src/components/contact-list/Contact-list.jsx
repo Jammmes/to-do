@@ -3,7 +3,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import ContactItem  from '../contact-item/index';
 import Preloader from '../preloader/index';
-import withConnectToStore from '../with-connect-to-store/index';
 
 export class ContactList extends PureComponent {
 
@@ -23,12 +22,5 @@ export class ContactList extends PureComponent {
         )
     }
 }
- 
-function mapStateToProps (state) {
-    return {
-        list: state.contact
-     }
-}
 
-export default withConnectToStore(ContactList, mapStateToProps)
-
+export default ContactList;

@@ -3,8 +3,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'antd/lib/button';
 import 'antd/lib/button/style/css';
-import { connect } from 'react-redux';
-import { loadContacts } from './actions';
 
 class ContactLoader extends PureComponent {
 
@@ -26,16 +24,4 @@ class ContactLoader extends PureComponent {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        contacts: state.contact
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onLoadContacts: url => dispatch(loadContacts(url))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ContactLoader);
+export default ContactLoader;

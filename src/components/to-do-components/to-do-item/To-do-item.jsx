@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { deleteToDo, toggleToDo } from '../actions';
 import Form from 'antd/lib/form';
 import Button from 'antd/lib/button';
 import Input from 'antd/lib/input';
@@ -17,38 +15,28 @@ export class ToDoItem extends PureComponent {
 
     static propTypes = {
         todo: PropTypes.object.isRequired,
-        dispatch: PropTypes.func.isRequired
+        onDelete: PropTypes.func.isRequired,
+        onToggle: PropTypes.func.isRequired,
     }
     
     render() {
         const { name, id, completed } = this.props.item;
         const inputClassName = completed ? 'completed' : 'un-completed';
+        const { onToggle, onDelete} = this.props;
         return (
             <Form layout="inline">
                 <Form.Item>
                     <Input className = { inputClassName } disabled placeholder="Task" value = { name }/>
                 </Form.Item>
                 <Form.Item>
-                    <Checkbox checked = { completed } onChange = { this.onToggle.bind(this, id) }/>
+                    <Checkbox checked = { completed } onChange = {()=> onToggle(id) }/>
                 </Form.Item>
                 <Form.Item>
-                    <Button type = "danger" icon="delete" onClick = { this.onDelete.bind(this, id) }/>
+                    <Button type = "danger" icon="delete" onClick = {()=> onDelete(id) }/>
                 </Form.Item>
             </Form>
         );
     }
-
-    onDelete(id) {
-        this.props.dispatch( deleteToDo(id) );
-    }
-
-    onToggle(id) {
-        this.props.dispatch ( toggleToDo(id) );
-    }
 }
 
-function mapStateToProps(state) {
-    return { todo: state.toDoStore }
-}
-
-export default connect(mapStateToProps)(ToDoItem);
+export default ToDoItem;

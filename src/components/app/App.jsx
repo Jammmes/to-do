@@ -5,7 +5,7 @@ import  AppHeader  from '../app-header/index';
 import  AppFooter  from '../app-footer/index';
 import { DevTools } from '../../utils/index';
 import Layout from 'antd/lib/layout';
-import Modal from '../modal/index';
+import { ModalContainer } from '../containers/index';
 import 'antd/lib/layout/style/css';
 
 const {Header, Footer, Content} = Layout;
@@ -20,9 +20,9 @@ return (
 			<Header>
 				<AppHeader />
 			</Header>
-			< Modal>
+			< ModalContainer>
 				Внимание! Модульное окно.
-			</ Modal>
+			</ ModalContainer>
 			<Content>
 				{ this.props.children }
 			</Content>

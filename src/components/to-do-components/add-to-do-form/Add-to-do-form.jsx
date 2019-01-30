@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { addToDo } from '../actions';
 import  Form from 'antd/lib/form';
 import  Input from 'antd/lib/input';
@@ -20,7 +19,7 @@ export class AddToDoForm extends PureComponent {
     }
 
     static propTypes = {
-        inputText: PropTypes.object.isRequired,
+        toDoStore: PropTypes.object.isRequired,
         dispatch: PropTypes.func.isRequired
     }
 
@@ -38,7 +37,7 @@ export class AddToDoForm extends PureComponent {
     onAddToDo() {
         const name = this.state.toDoName;
         if (name) {
-            const id = this.generateNewId(this.props.inputText.todos);
+            const id = this.generateNewId(this.props.toDoStore.todos);
             this.props.dispatch( addToDo(id, name) );
             this.setState( state => ({ toDoName: '' }) );
         } else { console.log( 'text is required!' ) }
@@ -61,8 +60,4 @@ export class AddToDoForm extends PureComponent {
     }
 }
 
-function mapStateToProps(state) {
-    return { inputText: state.toDoStore };
-}
-
-export default connect(mapStateToProps)(AddToDoForm);
+export default AddToDoForm;

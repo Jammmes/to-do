@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import './to-do-page.css';
-import  AddToDoForm  from '../../to-do-components/add-to-do-form/index';
-import ToDoList from '../../to-do-components/to-do-list/index';
+import { ToDoListContainer, AddToDoFormContainer } from '../../containers/index';
 
 class ToDoPage extends PureComponent {
 
@@ -11,8 +10,8 @@ class ToDoPage extends PureComponent {
     render() {
         return (
             <div className="ToDoPage">
-                <AddToDoForm />
-                <ToDoList />
+                <AddToDoFormContainer />
+                <ToDoListContainer />
             </div>
         )
     }
