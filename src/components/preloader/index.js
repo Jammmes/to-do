@@ -1,3 +1,3 @@
-import Preloader from './Preloader.jsx';
+import Preloader from './preloader.jsx';
 
 export default Preloader;

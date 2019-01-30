@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 import ContactItem  from '../contact-item/index';
-import Preloader from '../preloader/index';
+import Preloader from '../../preloader/index';
 
 export class ContactList extends PureComponent {
 

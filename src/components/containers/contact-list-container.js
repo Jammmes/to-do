@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
-import ContactList from '../../components/contact-list/index';
-
+import ContactList from '../../components/contact-components/contact-list/index';
 
 export const ContactListContainer = connect(
     state => ({

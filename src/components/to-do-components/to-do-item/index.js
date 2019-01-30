@@ -1,4 +1,4 @@
-import ToDoItem from './To-do-item.jsx';
+import ToDoItem from './to-do-item.jsx';
 
 export default ToDoItem;
 

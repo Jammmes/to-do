@@ -1,2 +1,2 @@
-import ShowInfo from './Show-info.jsx';
+import ShowInfo from './show-info.jsx';
 export default ShowInfo;
