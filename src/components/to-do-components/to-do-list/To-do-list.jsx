@@ -15,6 +15,11 @@ export class ToDoList extends PureComponent {
     render() {
         return <div>
             <List
+            	style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center'
+                }}
                 size="small"
                 bordered
                 dataSource = { this.props.items.todos }

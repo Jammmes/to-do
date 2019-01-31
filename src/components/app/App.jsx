@@ -17,7 +17,11 @@ return (
 	<div className="app">
 		{ process.env.NODE_ENV !== 'production' ? <DevTools /> : null }
 		<Layout>
-			<Header>
+			<Header
+				style={{
+					background: 'inherit'
+				}}
+			>
 				<AppHeader />
 			</Header>
 			< ModalContainer>
@@ -26,7 +30,13 @@ return (
 			<Content>
 				{ this.props.children }
 			</Content>
-			<Footer className = 'footer'>
+			<Footer
+				style={{
+					display: 'flex',
+					flexDirection: 'row',
+					justifyContent: 'center'
+				}}
+			>
 				<AppFooter />
 			</Footer>
 		</Layout>

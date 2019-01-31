@@ -47,7 +47,12 @@ export class AddToDoForm extends PureComponent {
         const { toDoName } = this.state;
         return (
             <Form layout="inline">
-                <Card>
+                <Card
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'flex-end'
+                    }}>
                     <Form.Item>
                         <Input value = { toDoName } placeholder="Write To do here" onChange = { this.inputOnChange.bind(this) } required/>
                     </Form.Item>
